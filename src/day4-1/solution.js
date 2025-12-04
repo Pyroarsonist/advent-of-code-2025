@@ -6,7 +6,7 @@ const couldBeForklifted = (i, j, matrix) => {
     return false;
   }
 
-  let neigbours = 0;
+  let neighbours = 0;
 
   for (let dx = -1; dx <= 1; dx++) {
     for (let dy = -1; dy <= 1; dy++) {
@@ -14,11 +14,11 @@ const couldBeForklifted = (i, j, matrix) => {
 
       const newItem = matrix[i + dx]?.[j + dy];
 
-      if (newItem === ROLL_PAPER) neigbours++;
+      if (newItem === ROLL_PAPER) neighbours++;
     }
   }
 
-  return neigbours < 4;
+  return neighbours < 4;
 };
 
 export const getSolution = (input) => {
